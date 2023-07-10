@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-TW" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/Blog/img/fluid.png">
+  <link rel="icon" href="/Blog/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Gary Chen">
+  <meta name="keywords" content="gary_cba">
+  
+    <meta name="description" content="APCS 2023 6月 實作題早上的觀念題就出包，有某位說:「十點才考試啦!」，於是我們就先去全家。差不多9:40的時候我們從全家走回考場，沒想到看到試場外貼的時間「第一節 9:30入場」。完了，巴逼Q了，觀念5沒望了。 這次的實作題我覺得第二題比第一題簡單，我覺得第一題是出來搞心態的。從這幾次的考試中能發現第三題都是考很重「遞迴」，只能說遞迴的題目練太少的話真的會寫不出來。第四題我沒寫，前面第">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gary&#39;s Blog">
+<meta property="og:url" content="https://gary181818.github.io/Blog/2023/06/10/APCS%202023%2006/index.html">
+<meta property="og:site_name" content="Gary&#39;s Blog">
+<meta property="og:description" content="APCS 2023 6月 實作題早上的觀念題就出包，有某位說:「十點才考試啦!」，於是我們就先去全家。差不多9:40的時候我們從全家走回考場，沒想到看到試場外貼的時間「第一節 9:30入場」。完了，巴逼Q了，觀念5沒望了。 這次的實作題我覺得第二題比第一題簡單，我覺得第一題是出來搞心態的。從這幾次的考試中能發現第三題都是考很重「遞迴」，只能說遞迴的題目練太少的話真的會寫不出來。第四題我沒寫，前面第">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2023-06-10T02:59:04.150Z">
+<meta property="article:modified_time" content="2023-06-10T06:11:33.995Z">
+<meta property="article:author" content="Gary Chen">
+<meta property="article:tag" content="gary_cba">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>Gary&#39;s Blog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/Blog/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/Blog/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/Blog/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"gary181818.github.io","root":"/Blog/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/Blog/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/Blog/js/utils.js" ></script>
+  <script  src="/Blog/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/Blog/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Blog/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首頁</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Blog/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>歸檔</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Blog/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分類</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Blog/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>標籤</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Blog/about/">
+                <i class="iconfont icon-user-fill"></i>
+                <span>關於</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/Blog/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text=""></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-06-10 10:59" pubdate>
+          2023年6月10日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          2.3k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          20 分鐘
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none"></h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="APCS-2023-6月-實作題"><a href="#APCS-2023-6月-實作題" class="headerlink" title="APCS 2023 6月 實作題"></a>APCS 2023 6月 實作題</h1><p>早上的觀念題就出包，有某位說:「十點才考試啦!」，於是我們就先去全家。差不多9:40的時候我們從全家走回考場，沒想到看到試場外貼的時間「第一節 9:30入場」。完了，巴逼Q了，觀念5沒望了。</p>
+<p>這次的實作題我覺得第二題比第一題簡單，我覺得第一題是出來搞心態的。從這幾次的考試中能發現第三題都是考很重「遞迴」，只能說遞迴的題目練太少的話真的會寫不出來。第四題我沒寫，前面第一題我有點卡，所以浪費了一些時間。</p>
+<p>總結一下，近幾期的APCS觀念題越來越活，不過有很多的題目只要找到他要考你甚麼觀念，便能輕鬆解決。這裡有小小的推薦，大家一定都很疑惑到底觀念題怎麼練，最近我們學校的國際班同學幫我借道一本美國的APCS的題本，雖然都是Java，不過當中的題目是相當多的，大家可以去買來讀讀看。至於實作題的話</p>
+<h2 id="第一題"><a href="#第一題" class="headerlink" title="第一題"></a>第一題</h2><h4 id="題目-https-zerojudge-tw-ShowProblem-problemid-k731"><a href="#題目-https-zerojudge-tw-ShowProblem-problemid-k731" class="headerlink" title="題目: https://zerojudge.tw/ShowProblem?problemid=k731"></a>題目: <a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=k731">https://zerojudge.tw/ShowProblem?problemid=k731</a></h4><h4 id="解題關鍵"><a href="#解題關鍵" class="headerlink" title="解題關鍵:"></a>解題關鍵:</h4><table>
+<thead>
+<tr>
+<th align="center">方位</th>
+<th align="center">編號</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">東</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="center">南</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="center">西</td>
+<td align="center">3</td>
+</tr>
+<tr>
+<td align="center">北</td>
+<td align="center">4</td>
+</tr>
+</tbody></table>
+<p>設四種方位的編號每個位置輸入進來後確認旋轉方向。</p>
+<h4 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">int</span> n, l, r, re, face = <span class="hljs-number">1</span>, x, y, px, py;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;n;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; i++)&#123;<br>        cin&gt;&gt;x&gt;&gt;y;<br>        <span class="hljs-keyword">if</span>(i != <span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">if</span>(face == <span class="hljs-number">1</span>)&#123;<br>                <span class="hljs-keyword">if</span>(y &gt; py) l++, face = <span class="hljs-number">4</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(y &lt; py) r++, face = <span class="hljs-number">2</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(x &lt; px) re++, face = <span class="hljs-number">3</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(face == <span class="hljs-number">2</span>)&#123;<br>                <span class="hljs-keyword">if</span>(x &gt; px) l++, face = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(x &lt; px) r++, face = <span class="hljs-number">3</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(y  &gt;py) re++, face = <span class="hljs-number">4</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(face == <span class="hljs-number">3</span>)&#123;<br>                <span class="hljs-keyword">if</span>(y &gt; py) r++, face = <span class="hljs-number">4</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(y &lt; py) l++, face = <span class="hljs-number">2</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(x &gt; px) re++, face = <span class="hljs-number">1</span>;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(face == <span class="hljs-number">4</span>)&#123;<br>                <span class="hljs-keyword">if</span>(x &gt; px) r++, face = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(x &lt; px) l++, face = <span class="hljs-number">3</span>;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(y &lt; py) re++, face = <span class="hljs-number">2</span>;<br>            &#125;<br>        &#125;<br>        px = x, py = y;<br>    &#125;<br>    cout&lt;&lt;l&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;r&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;re&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="第二題"><a href="#第二題" class="headerlink" title="第二題"></a>第二題</h2><h4 id="題目-https-zerojudge-tw-ShowProblem-problemid-k732"><a href="#題目-https-zerojudge-tw-ShowProblem-problemid-k732" class="headerlink" title="題目: https://zerojudge.tw/ShowProblem?problemid=k732"></a>題目: <a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=k732">https://zerojudge.tw/ShowProblem?problemid=k732</a></h4><h4 id="題解"><a href="#題解" class="headerlink" title="題解:"></a>題解:</h4><p>n, m 的大小可以發現爆搜也沒問題，所以就每一格搜一次，每一格也再從頭搜一遍找適合的距離然後加入。</p>
+<p>時間複雜度: $O(N^2M^2)$</p>
+<h4 id="程式碼-1"><a href="#程式碼-1" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-type">int</span> n, m, k;<br><span class="hljs-type">int</span> arr[<span class="hljs-number">55</span>][<span class="hljs-number">55</span>];<br>set&lt;pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; &gt; ans;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">dis</span><span class="hljs-params">(<span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j, <span class="hljs-type">int</span> s, <span class="hljs-type">int</span> t, <span class="hljs-type">int</span> k)</span></span>&#123;<br>    <span class="hljs-type">int</span> distance = <span class="hljs-built_in">abs</span>(i-s) + <span class="hljs-built_in">abs</span>(j-t);<br>    <span class="hljs-keyword">return</span> distance &lt;= k;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    cin&gt;&gt;n&gt;&gt;m;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; i++) <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=m; j++) cin&gt;&gt;arr[i][j];<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>; i&lt;=n; i++)&#123;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">1</span>; j&lt;=m; j++)&#123;<br>            <span class="hljs-type">int</span> k = arr[i][j];<br>            <span class="hljs-type">int</span> sum = <span class="hljs-number">0</span>;<br><br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> s=<span class="hljs-number">1</span>; s&lt;=n; s++)&#123;<br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> t=<span class="hljs-number">1</span>; t&lt;=m; t++)&#123;<br>                    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">dis</span>(i, j, s, t, k))&#123;<br>                        sum += arr[s][t];<br>                    &#125;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(arr[i][j] % <span class="hljs-number">10</span> == sum % <span class="hljs-number">10</span>)&#123;<br>                ans.<span class="hljs-built_in">insert</span>(&#123;i<span class="hljs-number">-1</span>, j<span class="hljs-number">-1</span>&#125;);<br>            &#125;<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;ans.<span class="hljs-built_in">size</span>()&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i: ans)&#123;<br>        cout&lt;&lt;i.first&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;i.second&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+<h2 id="第三題"><a href="#第三題" class="headerlink" title="第三題"></a>第三題</h2><h4 id="題目-https-zerojudge-tw-ShowProblem-problemid-k733"><a href="#題目-https-zerojudge-tw-ShowProblem-problemid-k733" class="headerlink" title="題目: https://zerojudge.tw/ShowProblem?problemid=k733"></a>題目: <a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=k733">https://zerojudge.tw/ShowProblem?problemid=k733</a></h4><h4 id="題解關鍵"><a href="#題解關鍵" class="headerlink" title="題解關鍵:"></a>題解關鍵:</h4><h4 id="程式碼-2"><a href="#程式碼-2" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br></code></pre></td></tr></table></figure>
+
+<h2 id="第四題"><a href="#第四題" class="headerlink" title="第四題"></a>第四題</h2><h4 id="題目-https-zerojudge-tw-ShowProblem-problemid-k734"><a href="#題目-https-zerojudge-tw-ShowProblem-problemid-k734" class="headerlink" title="題目: https://zerojudge.tw/ShowProblem?problemid=k734"></a>題目: <a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=k734">https://zerojudge.tw/ShowProblem?problemid=k734</a></h4><h4 id="題解關鍵-1"><a href="#題解關鍵-1" class="headerlink" title="題解關鍵:"></a>題解關鍵:</h4><h4 id="程式碼-3"><a href="#程式碼-3" class="headerlink" title="程式碼"></a>程式碼</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br></code></pre></td></tr></table></figure>
+
+<h3 id="其他參考網站"><a href="#其他參考網站" class="headerlink" title="其他參考網站"></a>其他參考網站</h3><ol>
+<li><a target="_blank" rel="noopener" href="https://andyli.tw/apcs-20230604/">培哥的學習筆記</a></li>
+<li><a target="_blank" rel="noopener" href="https://coding-prep.com/2023/06/04/2023-%E5%B9%B4-6-%E6%9C%88-apcs-%E9%A1%8C%E8%A7%A3/">Coding Prep 網站</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/@thanksone/APCS20230604?fbclid=IwAR3CmbAnfNZEwrQgnjanNHiGlIa0j6f_UZKV9XprqRzt2i4kGKlg3z3DeZ0">thanksone Hackmd</a></li>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/@o2sU2kaQTFW6FIkUj2M-xQ">吳邦一教授 Hackmd</a></li>
+</ol>
+<h6 id="tags-APCS"><a href="#tags-APCS" class="headerlink" title="tags: APCS"></a>tags: <code>APCS</code></h6>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div></div>
+      <div>https://gary181818.github.io/Blog/2023/06/10/APCS 2023 06/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Gary Chen</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>發布於</div>
+          <div>2023年6月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>許可協議</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Blog/2023/07/09/APCS%202023%2001/" title="">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile"></span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目錄</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜尋</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">關鍵字</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/Blog/js/events.js" ></script>
+<script  src="/Blog/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/Blog/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/Blog/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/Blog/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允許 JavaScript 運行的環境下瀏覽效果更佳</div>
+  </noscript>
+</body>
+</html>
